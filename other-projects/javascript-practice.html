@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculation</h1>
+    <p id="demotest"></p>
+    <p id="newResult"></p>
+
+    <script>
+        function calculateTotalCost(pricePerI, quantity, discountPercentage) {
+            const subtotal = pricePerI * quantity;
+            const discountAmount = subtotal * (discountPercentage / 100);
+            const totalCost = subtotal - discountAmount;
+            return totalCost;
+        }
+        let result = calculateTotalCost(5, 5, 10);
+        document.getElementById("demotest").innerHTML = result;
+
+        function applyMultiple(initialAmount) {
+            let total = initialAmount;
+            total += total * 0.05;
+            total += 10;
+            total += total * 0.02;
+            return total;
+        }
+        let newResult = applyMultiple(100);
+        document.getElementById("newResult").innerHTML = newResult;
+    </script>
+</body>
+</html>
